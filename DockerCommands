@@ -1,0 +1,19 @@
+### Dockerで動かす
+
+```
+# 環境変数
+export imagename=customfluentbit:0.1
+export containername=fluentbid-01
+
+# イメージビルド
+docker build -t $imagename .
+
+# docker起動 (XXX イメージID)
+docker run --name $containername -v ./tmp:/tmp  $imagename
+```
+
+削除コマンド
+```
+docker rm $containername
+docker rmi $imagename
+```
